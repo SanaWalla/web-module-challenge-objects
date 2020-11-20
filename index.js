@@ -91,7 +91,7 @@ Using the reviews array above do the following: (no function needed)
 */
 
 reviews.push({ name: 'Sana', rating: 5, feedback: 'Its great' });
-console.log(reviews);
+
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -102,7 +102,7 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
 
 reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
 
-console.log(reviews);
+
 
 
 
@@ -121,7 +121,7 @@ function getReviewByIndex(array, num) {
   return `${array[num].name} gave the restaurant a ${array[num].rating} star review, and their feedback was: ${array[num].feedback}`;
 }
 
-console.log(getReviewByIndex(reviews, 0));
+
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -158,9 +158,18 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
-function getReviewByRating(/* code here */) {
-  /* code here */
+function getReviewByRating(array, ratingNum) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].rating >= ratingNum && array[i].rating < ratingNum + 1) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
 }
+
+console.log(getReviewByRating(reviews, 4));
+
 
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
